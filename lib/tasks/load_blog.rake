@@ -1,6 +1,6 @@
 namespace :load do
-  desc "loads a shit-ton of posts, comments, and replies into the blog"
-  task :blog => :environment do
+  desc 'loads a shit-ton of posts, comments, and replies into the blog'
+  task blog: :environment do
     100.times do
       p = Post.create(
         title: Faker::Company.catch_phrase,
@@ -13,7 +13,7 @@ namespace :load do
         p.save!
       end
 
-      print "."
+      print '.'
     end
   end
 end
